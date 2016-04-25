@@ -13,7 +13,7 @@ var routes = (
 		<Route path='/' component={Main}>
 			<IndexRoute component={Home}/>
 			<Route path='playerOne' header = 'Player one' component={PromptContainer}></Route>
-			<Route path='playerTow/:playerOne' header = 'Player two' component={PromptContainer}></Route>
+			<Route path='playerTwo/:playerOne' header = 'Player two' component={PromptContainer}></Route>
 		</Route>
 	</Router>
 );
