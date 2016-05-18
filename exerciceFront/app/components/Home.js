@@ -1,11 +1,11 @@
-import React from 'react';
-
-import ReactRouter from 'react-router';
-import Link from ReactRouter.Link;
-class Home extends Component({
-	render() {
+var React = require('react');
+var transparentBg = require('../styles').transparentBg;
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
+var Home = React.createClass({
+  render: function () {
 		return (
-			<div className ="jumbotron col-sm-12 text-center" >
+			<div className ="jumbotron col-sm-12 text-center" style= {transparentBg}>
 				<h1>La webapp pour envoyer des colis</h1>
 				<p claName="lead"> Fais livrer tes colis en un rien de temps !</p>
 				<Link to="/pickup">
@@ -16,4 +16,4 @@ class Home extends Component({
 	}
 });
 
-export default Home;
+module.exports = Home;

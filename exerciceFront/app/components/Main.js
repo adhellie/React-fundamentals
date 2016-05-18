@@ -1,14 +1,13 @@
-import React from 'react';
+var React = require('react');
 
-
-class Main extends Component({
-	render () {
-		return (
-			<div className="main-container"> 
-				{this.props.children}
-			</div>
-		)
-	}
+var Main = React.createClass({
+  render: function () {
+    return (
+      <div className="main-container">
+        {this.props.children}
+      </div>
+    )
+  }
 });
 
-export default Main;
+module.exports = Main;

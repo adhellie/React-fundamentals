@@ -1,18 +1,23 @@
-import React form 'react';
-import { render } from 'react-dom';
-import { Router, Route, Link, browserHistory } = 'react-router';
-import Main form '../components/Main';
-import Home form '../components/Home';
-import LocationFormContainer form '../containers/LocationFormContainer';
+var React = require('react');
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var IndexRoute = ReactRouter.IndexRoute;
+var hashHistory = ReactRouter.hashHistory;
+var Main = require('../components/Main');
+var Home = require('../components/Home');
+var LocationFormContainer = require('../containers/LocationFormContainer');
 
 
-render((
+var routes = (
   <Router history={hashHistory}>
-		<Route path='/' component={Main}>
-			<IndexRoute component={Home}/>
-			<Route path='pickup' header = 'Retrait' component={LocationFormContainer}></Route>
-			<Route path='shipping/:pickup' header = 'Livraison' component={LocationFormContainer}></Route>
-		</Route>
-	</Router>
-), document.body)
+    <Route path='/' component={Main}>
+      <IndexRoute component={Home}/>
+      <Route path='pickup' header = 'Retrait' component={LocationFormContainer}></Route>
+      <Route path='shipping/:pickup' header = 'Livraison' component={LocationFormContainer}></Route>
 
+    </Route>
+  </Router>
+);
+
+module.exports = routes;

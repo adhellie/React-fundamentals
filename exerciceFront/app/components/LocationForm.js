@@ -16,17 +16,9 @@ function LocationForm (props) {
               placeholder="Enter your address"
               type="text"
               onChange={props.onUpdateAdresse}
+              onBlur={props.onUpdateAdresse}
               value={props.adresse}/>
           </div>
-
-          <GooglePlacesSuggest onSelectSuggest={ this.handleSelectSuggest } search={ props.search }>
-            <input
-              type="text"
-              value={ props.search }
-              placeholder="Search a location"
-              onChange={ props.handleSearchChange }
-            />
-          </GooglePlacesSuggest>
 
 
           <table id="address">
@@ -49,7 +41,7 @@ function LocationForm (props) {
                       id="administrative_area_level_1" disabled="true"></input></td>
                 <td className="label">Zip code</td>
                 <td className="wideField"><input className="field" id="postal_code"
-                      disabled="true" onChange={props.onUpdatePostalCode}></input></td>
+                      disabled="true" value={props.postal_code} onChange={props.onUpdatePostalCode}></input></td>
               </tr>
               <tr>
                 <td className="label">Country</td>
@@ -62,23 +54,23 @@ function LocationForm (props) {
 
 
           <div className=" form-group col-sm-4 col-sm-offset-4">
-            <button className="btn btn-block btn-success" type="submit"> Continue </button>
+            <button disabled id="submitLocation" className="btn btn-block btn-success" type="submit"> Continue </button>
           </div>
         </form>
       </div>
     </div>
+    // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFfVxfxvIqCQotZVnF5_b5ETTh5i3L40&signed_in=true&libraries=places&callback=initAutocomplete"
+    //     async defer>
+    // </script>
   )
 }
 
 LocationForm.propTypes = {
   header: PropTypes.string.isRequired,
   onUpdateAdresse: PropTypes.func.isRequired,
-  onUpdatePostalCode: PropTypes.func.isRequired,
   onSubmitUser: PropTypes.func.isRequired,
   adresse: PropTypes.string.isRequired,
-  search: PropTypes.object.isRequired,
-  onSearchChange : PropTypes.func.isRequired,
-  onSelectSuggest :PropTypes.func.isRequired
+  postal_code: PropTypes.string.isRequired
 }
 
 module.exports = LocationForm;
