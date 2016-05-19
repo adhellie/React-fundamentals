@@ -17,6 +17,7 @@ var PromptContainer = React.createClass ({
 		this.setState({
 			username : e.target.value
 		})
+    console.log("adresse1"+ this.state.username);
 	},
 
 	handleSubmitUser: function (e) {

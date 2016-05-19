@@ -29,12 +29,6 @@ var helpers ={
           "length": 80,
           "width": 30,
           "weight": 2.5
-        },
-        {
-          "height": 60,
-          "length": 80,
-          "width": 30,
-          "weight": 1
         }
       ]
     }
@@ -54,7 +48,6 @@ var helpers ={
 
     request.setRequestHeader('Content-Type', 'application/json');
     request.setRequestHeader('Api-Key', '129fe593850a9dcc37974c1ef999f818');
-    request.setRequestHeader('Access-Control-Allow-Origin','*');
 
     request.onreadystatechange = function () {
       if (this.readyState === 4) {
